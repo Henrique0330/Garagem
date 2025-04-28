@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.urls import include, path
 from pyparsing import C
 from core.models.modelo import Modelo
+from core.views.veiculo import VeiculoViewSet
 from drf_spectacular.views import (
     SpectacularAPIView,
     SpectacularRedocView,
@@ -10,7 +11,7 @@ from drf_spectacular.views import (
 )
 from rest_framework.routers import DefaultRouter
 
-from core.views import UserViewSet, AcessorioViewSet, CorViewSet, ModeloViewSet
+from core.views import UserViewSet, AcessorioViewSet, CorViewSet, ModeloViewSet, VeiculoViewSet
 
 router = DefaultRouter()
 
@@ -18,6 +19,7 @@ router.register(r'usuarios', UserViewSet, basename='usuarios')
 router.register(r'acessorio', AcessorioViewSet)
 router.register(r'cor', CorViewSet)
 router.register(r'modelo', ModeloViewSet)
+router.register(r'veiculo', VeiculoViewSet, basename='veiculo')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
