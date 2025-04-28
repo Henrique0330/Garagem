@@ -4,7 +4,7 @@ class Cor(models.Model):
     nome = models.CharField(max_length=40)
 
     def __str__(self):
-        return f'({self.nome})' - {self.id}
+        return f'({self.nome}) - {self.id}'
     
     class Meta:
         verbose_name = 'Cor'
